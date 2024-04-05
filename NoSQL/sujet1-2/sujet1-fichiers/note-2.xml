@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<notes>
+  <note>
+    <to>To1</to> 
+    <from>From1</from>
+    <!-- <to>To1</to> -->
+    <body>First body</body>
+  </note>
+  <note>
+    <to>To2</to>
+    <from>From2</from>
+    <heading>Heading</heading>
+    <body>Main body</body>
+    <!-- <body>Appendix</body> -->
+  </note>
+  <note>
+    <to>To3</to>
+    <from>From3</from>
+    <!-- <to>To3</to> -->
+    <body>Third body</body>
+  </note>
+</notes>

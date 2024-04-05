@@ -1,0 +1,6 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+SELECT ?man WHERE {
+  ?man rdf:type humans:Man .
+  FILTER NOT EXISTS {?man humans:hasChild ?child}
+}

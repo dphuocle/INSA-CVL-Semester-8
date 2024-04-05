@@ -1,0 +1,7 @@
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?person WHERE {
+  ?person humans:age ?age .
+  FILTER (xsd:integer(?age) > 20)
+}

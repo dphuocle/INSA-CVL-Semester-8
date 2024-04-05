@@ -1,0 +1,2 @@
+PREFIX instance: <http://www.inria.fr/2007/09/11/humans.rdfs-instances#>
+DESCRIBE instance:John

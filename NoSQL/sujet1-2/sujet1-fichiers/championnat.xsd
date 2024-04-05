@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- 'clubReceveur' -->
+    <xs:simpleType name="clubReceveur">
+        <xs:restriction base="xs:string">
+            <xs:pattern value = "([A-Z])*"/>
+            <xs:maxLength value = "5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 'score' -->
+    <xs:simpleType name="scoreType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value = "([0-9])* ([0-9])*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 'club' -->
+    <xs:complexType name="clubType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="ville" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="clubReceveur" use="required"/>
+    </xs:complexType>
+
+    <!-- 'clubs' -->
+    <xs:complexType name="clubsType">
+        <xs:sequence>
+            <xs:element name="club" type="clubType" minOccurs="0" maxOccurs="20"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- 'rencontre' -->
+    <xs:complexType name="rencontre">
+        <xs:sequence>
+            <xs:element name="clubReceveur" type="clubReceveur"/>
+            <xs:element name="clubInvite" type="clubReceveur"/>
+            <xs:element name="score" type="scoreType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- 'journee' -->
+    <xs:complexType name="journeeType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:string"/>
+            <xs:element name="rencontre" type="rencontre" minOccurs="1" maxOccurs="10"/>
+        </xs:sequence>
+        <xs:attribute name="num"/>
+    </xs:complexType>
+
+    <!-- 'journees' -->
+    <xs:complexType name="journeesType">
+        <xs:sequence>
+            <xs:element name="journee" type="journeeType" minOccurs="0" maxOccurs="38"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- element 'championnat' -->
+    <xs:element name="championnat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clubs" type="clubsType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="journees" type="journeesType" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

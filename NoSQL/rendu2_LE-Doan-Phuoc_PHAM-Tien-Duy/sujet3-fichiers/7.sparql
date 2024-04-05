@@ -1,0 +1,6 @@
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+SELECT ?person1 ?person2 WHERE {
+  ?person1 humans:shirtsize ?size .
+  ?person2 humans:shirtsize ?size .
+  FILTER (?person1 != ?person2)
+}

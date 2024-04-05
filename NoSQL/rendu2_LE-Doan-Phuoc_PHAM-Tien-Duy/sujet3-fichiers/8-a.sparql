@@ -1,0 +1,7 @@
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+CONSTRUCT {
+  ?person1 humans:hasFriend ?person2 .
+  ?person2 humans:hasFriend ?person1 .
+} WHERE {
+  ?person1 humans:hasFriend ?person2 .
+}

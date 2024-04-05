@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listePays>
+    <pays>
+        <nom>France</nom>
+        <capitale>Paris</capitale>
+        <population annee = "2007">64102000</population>
+    </pays>
+    <pays>
+        <nom>Italie</nom>
+        <capitale>Rome</capitale>
+        <population annee = "2006">58133509</population>
+    </pays>
+    <pays>
+        <nom>Espagne</nom>
+        <capitale>Madrid</capitale>
+        <population annee = "2006">44708964</population>
+    </pays>
+</listePays>

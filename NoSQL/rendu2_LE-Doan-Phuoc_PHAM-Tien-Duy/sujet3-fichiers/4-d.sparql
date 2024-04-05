@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?person WHERE {
+  ?person rdf:type humans:Person .
+  { ?person humans:shoesize ?shoesize . FILTER (xsd:integer(?shoesize) > 8) }
+  UNION
+  { ?person humans:shirtsize ?shirtsize . FILTER (xsd:integer(?shirtsize) > 12) }
+}

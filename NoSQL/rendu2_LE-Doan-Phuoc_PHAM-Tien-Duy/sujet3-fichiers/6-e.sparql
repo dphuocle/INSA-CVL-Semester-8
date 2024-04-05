@@ -1,0 +1,7 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+SELECT ?woman ?spouse ?child WHERE {
+  ?woman rdf:type humans:Woman .
+  ?woman humans:hasSpouse ?spouse .
+  OPTIONAL {?woman humans:hasChild ?child}
+}
